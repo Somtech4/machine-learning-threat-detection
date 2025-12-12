@@ -115,12 +115,12 @@ python src/splunk_export.py --input results/predictions.csv --output splunk/look
 
 ## Contributing
 
-See `CONTRIBUTING.md`. Please do **not** upload PII, API keys, or raw logs.
+See `CONTRIBUTING.md`.
 
 
 ## Security
 
-See `SECURITY.md` for responsible disclosure procedures. Do **not** commit secrets.
+See `SECURITY.md` for responsible disclosure procedures.
 
 ---
 
