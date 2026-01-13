@@ -68,12 +68,31 @@ text## Repository Structure
 | Web Attack      | 0.96       | Web Attack  |
 | Benign          | 0.12       | BENIGN      |
 
+## Model Performance
+
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/329cfea3-be63-4214-a270-6ccb0f5c6fd9" />
+
+
+The model achieved high recall while maintaining a low false positive rate,
+demonstrating suitability for SOC prioritization rather than raw alerting.
+
 ## Roadmap
 
 - Docker deployment
 - Full Splunk HEC integration
 - SOAR playbooks
 - CI/CD pipeline
+
+## SOC & Detection Engineering Relevance
+
+This project reflects real-world detection engineering practices:
+- Enhancing SIEM workflows instead of replacing them
+- Improving alert prioritization and analyst efficiency
+- Supporting explainable, auditable security decisions
+- Enabling automation through APIs and structured outputs
+
+The focus is on **operational usability**, not academic ML performance.
+
 
 ## Contact
 
