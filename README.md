@@ -1,6 +1,6 @@
 
 # SIEM: Real-Time ML Threat Detection
-This project demonstrates practical detection engineering by augmenting a traditional SIEM with a machine-learning-based threat scoring pipeline.
+This project reflects the kind of detection engineering work I’ve done in SOC environments: improving signal quality, reducing alert fatigue, and supporting reliable incident response.
 
 Key skills demonstrated:
 - Feature engineering for security telemetry
@@ -13,10 +13,9 @@ Key skills demonstrated:
 Recommended review order:
 1. `docs/architecture.md`
 2. `src/model_training.ipynb`
-3. `src/realtime_scoring_api.py`
-4. `splunk/ingestion_example.conf`
+3. `splunk/ingestion_example.conf`
 
-Live API-powered Random Forest model for DDoS, Brute Force, Web Attack, Malware, Zero-Day detection.
+Live API-powered Random Forest model for DDoS, Brute Force, Web Attack.
 
 - 2.24% false positives
 - 93.7% attack recall
@@ -25,8 +24,7 @@ Live API-powered Random Forest model for DDoS, Brute Force, Web Attack, Malware,
 
 ## Live Demo
 
-Swagger UI: https://your-ngrok-url.ngrok-free.dev/docs  
-Endpoint: /score (POST JSON flow)
+Available on request or can be run locally following Quick Start.
 
 ## Quick Start
 
@@ -46,14 +44,15 @@ cd machine-learning-threat-detection
 2. Install
 
 pip install -r requirements.txt
-text3. Run API locally
+
+3. Run API locally
 uvicorn src.api:app --reload
-text4. Test
+
+4. Test
 python tests/test_detection.py
 text## Repository Structure
 
 - `notebooks/` — Training notebook (New_threat.ipynb)
-- `src/` — Production code (api.py, model_utils.py)
 - `models/` — Trained model and artifacts
 - `tests/` — 4 use case tests
 - `splunk/` — Future HEC config and lookups
@@ -66,6 +65,7 @@ text## Repository Structure
 | Brute Force     | 0.98       | Brute Force |
 | Web Attack      | 0.96       | Web Attack  |
 | Benign          | 0.12       | BENIGN      |
+These results were generated using simulated attack traffic and benign baseline data to evaluate detection behavior under controlled SOC-like conditions.
 
 ## Model Performance
 
@@ -100,12 +100,32 @@ This project reflects real-world detection engineering practices:
 
 The focus is on **operational usability**, not academic ML performance.
 
+## Threat Model & Detection Scope
+
+This project focuses on detecting high-volume and behavioral attack patterns commonly encountered in SOC environments:
+
+- Credential brute-force attacks
+- Volumetric denial-of-service (DDoS) activity
+- Web application attack traffic
+
+Detections are aligned with MITRE ATT&CK techniques such as:
+- T1110 – Brute Force
+- T1499 – Endpoint Denial of Service
+- T1190 – Exploit Public-Facing Application
+
+The model is designed to support alert prioritization and analyst triage rather than fully automated blocking.
+
+## Design Decisions & Tradeoffs
+
+- Random Forest chosen for interpretability and stability over deep learning
+- Feature engineering prioritized over raw packet/log ingestion to reduce noise
+- API-based scoring enables SIEM-agnostic integration
+- Model augments SIEM workflows rather than replacing native correlation rules
+
+
 
 ## Contact
 
 somtoeze21@gmail.com  
 LinkedIn: www.linkedin.com/in/joshua-eze
 
-MIT License
-Email: somtoeze21@gmail.com
-LinkedIn: www.linkedin.com/in/joshua-eze
