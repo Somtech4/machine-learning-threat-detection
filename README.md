@@ -1,6 +1,21 @@
-[![ML Threat Detection](./screenshots/step1_upload_dataset.png)](#)
+[[ML Threat Detection](./screenshots/step1_upload_dataset.png)](#)
 
-# Next-Gen SIEM: Real-Time ML Threat Detection
+# SIEM: Real-Time ML Threat Detection
+This project demonstrates practical detection engineering by augmenting a traditional SIEM with a machine-learning-based threat scoring pipeline.
+
+Key skills demonstrated:
+- Feature engineering for security telemetry
+- ML-assisted detection (Random Forest)
+- Real-time ingestion into Splunk via HEC
+- API-driven, SOC-ready architecture
+- Clear documentation and reproducibility
+
+  
+Recommended review order:
+1. `docs/architecture.md`
+2. `src/model_training.ipynb`
+3. `src/realtime_scoring_api.py`
+4. `splunk/ingestion_example.conf`
 
 Live API-powered Random Forest model for DDoS, Brute Force, Web Attack, Malware, Zero-Day detection.
 
