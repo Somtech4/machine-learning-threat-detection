@@ -76,6 +76,14 @@ text## Repository Structure
 The model achieved high recall while maintaining a low false positive rate,
 demonstrating suitability for SOC prioritization rather than raw alerting.
 
+
+## Architecture Overview
+
+<img width="720" height="405" alt="Architecture" src="https://github.com/user-attachments/assets/70efc2a5-9c4d-49e7-b554-9d54e45a8e02" />
+
+This architecture shows how machine-learning-based threat scoring
+can be integrated into existing SIEM workflows without replacing
+core SOC tooling.
 ## Roadmap
 
 - Docker deployment
