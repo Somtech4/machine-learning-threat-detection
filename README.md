@@ -1,4 +1,3 @@
-[[ML Threat Detection](./screenshots/step1_upload_dataset.png)](#)
 
 # SIEM: Real-Time ML Threat Detection
 This project demonstrates practical detection engineering by augmenting a traditional SIEM with a machine-learning-based threat scoring pipeline.
