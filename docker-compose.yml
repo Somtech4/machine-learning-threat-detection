@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  ml-api:
+    build: .
+    container_name: ml-threat-scoring
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=production
