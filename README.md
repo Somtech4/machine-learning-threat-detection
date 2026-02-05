@@ -115,6 +115,32 @@ Detections are aligned with MITRE ATT&CK techniques such as:
 
 The model is designed to support alert prioritization and analyst triage rather than fully automated blocking.
 
+## Containerized Deployment & CI/CD
+
+This project includes a Dockerized ML threat scoring service designed for
+reproducible deployment and SOC automation.
+
+### Why Containerization
+Docker decouples detection logic from infrastructure, enabling:
+- Consistent execution across environments
+- Easier integration with SIEM and SOAR workflows
+- Controlled experimentation without vendor lock-in
+
+### CI/CD Pipeline
+A GitHub Actions pipeline enforces engineering discipline by:
+- Linting and validating Python code
+- Executing unit tests where available
+- Building the Docker image on every change
+
+This mirrors real-world security engineering practices where reliability,
+auditability, and repeatability matter more than uptime.
+
+### SIEM Integration (Simulated)
+A mock SIEM ingestion client is included to simulate event enrichment.
+It sends structured security events to the ML API and receives risk scores,
+demonstrating how this service would integrate into a production SIEM pipeline.
+
+
 ## Design Decisions & Tradeoffs
 
 - Random Forest chosen for interpretability and stability over deep learning
